@@ -1,0 +1,5 @@
+<% if flash[:notice] %>
+   <div class="notice"><%= flash[:notice] %></div>
+ <% end %>
+
+<%=button_to "Back",music_studio_index_path,method: :get%>

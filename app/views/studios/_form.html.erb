@@ -1,0 +1,28 @@
+<div class="row2">
+  <div class='col-sm-4'>
+    <div class="form-group">
+
+      <%= simple_form_for @studio do |f| %>
+
+         <%= f.input :name %>
+       </br>
+         <%= f.input :location%>
+       </br>
+         <label for="opening_time">Opening Time</label>
+         <%= f.time_select :opening_time ,{ampm: true}%>
+       </br>
+       <br>
+         <label for="closing_time">Closing Time</label>
+         <%= f.time_select :closing_time,{ampm: true} %>
+       </br>
+       <br>
+         Rs.<%= f.input :studio_type %>
+       </br>
+         <%= f.input :price%>
+
+         <%= f.button :submit %>
+
+      <% end %>
+    </div>
+  </div>
+</div>
