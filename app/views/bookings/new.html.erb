@@ -5,9 +5,9 @@
     <div class='col-sm-10'>
       <div class="form-group">
         <%= form_tag(studio_bookings_path) do %>
-          <label for="start_time">Start Time</label>
+          <label for="start_time">*Start Time</label>
           <%= text_field_tag :start_time%>
-          <label for="end_time">End Time</label>
+          <label for="end_time">*End Time</label>
           <%=text_field_tag :end_time%>
           <%= submit_tag "Create Booking"%>
         <%end%>

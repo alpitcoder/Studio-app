@@ -8,15 +8,15 @@
        </br>
          <%= f.input :location%>
        </br>
-         <label for="opening_time">Opening Time</label>
+         <label for="opening_time">*Opening Time</label>
          <%= f.time_select :opening_time ,{ampm: true}%>
        </br>
        <br>
-         <label for="closing_time">Closing Time</label>
+         <label for="closing_time">*Closing Time</label>
          <%= f.time_select :closing_time,{ampm: true} %>
        </br>
        <br>
-         Rs.<%= f.input :studio_type %>
+         <%= f.input :studio_type %>
        </br>
          <%= f.input :price%>
 

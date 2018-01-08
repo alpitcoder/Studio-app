@@ -2,12 +2,12 @@
   before_action :check_value, only: [:index],if: -> {params[:start_time].present? && params[:end_time].present?}
 
   def index
-    @studios=Studio.all.left_outer_joins(:bookings)
+    @studios=Studio.all.left_outer_joins(:bookings).distinct
     if params[:location].present?
       @studios=@studios.where('location like ?',"%#{params[:location]}%")
     end
     if params[:start_time].present? && params[:end_time].present?
-      studios = @studios.where('opening_time <= ? AND closing_time >= ? AND bookings.start_time BETWEEN ? AND ? AND bookings.start_time!= ? AND bookings.status !=? AND bookings.start_time!=?',Time.parse(params[:start_time]),Time.parse(params[:end_time]),Time.parse(params[:start_time]),Time.parse(params[:end_time]),"NULL","Confirmed","NULL")
+      @studios = @studios.where('opening_time <= ? AND closing_time >= ? AND bookings.start_time BETWEEN ? AND ? AND bookings.start_time!= ? AND bookings.status !=? AND bookings.start_time!=?',Time.parse(params[:start_time]),Time.parse(params[:end_time]),Time.parse(params[:start_time]),Time.parse(params[:end_time]),"NULL","Confirmed","NULL")
     end
   end
 
