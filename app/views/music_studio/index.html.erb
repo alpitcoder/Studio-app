@@ -1,19 +1,31 @@
 
 <div class="container-fluid">
-  <div class="row2">
-    <div class='col-sm-10'>
-      <div class="form-group">
-        <%= form_tag(music_studio_index_path, method: :get) do %>
-          <label for="location">Location</label>
-          <%= text_field_tag :location%>
-          <label for="start_time">Start Time</label>
-          <%= text_field_tag :start_time%>
-          <label for="end_time">End Time</label>
-          <%=text_field_tag :end_time%>
-          <%= submit_tag "Search"%>
-        <%end%>
+  <div class="row">
+    <%= form_tag(music_studio_index_path, method: :get) do %>
+      <div class='col-sm-3'>
+        <div class="input-group">
+          <label for="location" class= "location-data">Location</label>
+          <%= text_field_tag :location,nil, placeholder: 'Enter Location Here..'%>
         </div>
       </div>
+      <div class='col-sm-3'>
+        <div class="input-group">
+          <label for="start_time" class="start_time-data">Start Time</label>
+          <%= text_field_tag :start_time,nil, placeholder: 'Enter Start Time Here..'%>
+        </div>
+      </div>
+      <div class='col-sm-3'>
+        <div class="input-group">
+          <label for="end_time" class="end_time-data">End Time</label>
+          <%=text_field_tag :end_time,nil, placeholder: 'Enter End Time Here..'%>
+        </div>
+      </div>
+      <div class='col-sm-3'>
+        <div class="input-group">
+          <%= submit_tag "Search"%>
+        </div>
+      </div>
+    <%end%>
     </div>
   </div>
 <hr>
@@ -33,13 +45,6 @@
 </div>
 
 
-<script type="text/javascript">
-    $(function () {
-        $('#start_time').datetimepicker();
-        $('#end_time').datetimepicker();
-    });
-</script>
-
 
 <style>
 h2{
@@ -53,10 +58,5 @@ h3{
 p{
   display: inline-block;
 }
-
-.header{
-  background: #ccc;
-}
-
 
 </style>

@@ -15,12 +15,12 @@
       <div class="row header">
         <h2>MusicStudio</h2>
         <% if user_signed_in? %>
-          <%=link_to "SignOut",destroy_user_session_path,class: 'signout-class',method: :delete%>
+          <%= button_to "SignOut",destroy_user_session_path,class: 'btn btn-primary',method: :delete%>
         <%else%>
-          <%= link_to "SignUp",new_user_registration_path,class: 'signup-class', id: 'signup-id'%>
-          <%= link_to "SignIn",new_user_session_path,class: 'signin-class', id: 'signin-id'%>
+          <%= button_to "SignUp",new_user_registration_path,class: 'btn btn-primary', id: 'signup-id' ,method: :get%>
+          <%= button_to "SignIn",new_user_session_path,class: 'btn btn-primary', id: 'signin-id'%>
         <%end%>
-        <%= button_to "Post a new MusicStudio",new_studio_path,method: :get %>
+        <%= button_to "Post a new MusicStudio",new_studio_path, class:"btn btn-primary",method: :get %>
       </div>
       </br>
       </br>
@@ -28,32 +28,3 @@
     </div>
   </body>
 </html>
-
-<style>
-.header{
-  background: #ccc;
-}
-
-a.signup-class{
-  color: blue;
-  position: relative;
-  left: 500px;
-}
-a.signin-class{
-  color: blue;
-  position: relative;
-  left: 510px;
-}
-
-a.signout-class{
-  color: blue;
-  position: relative;
-  left: 400px;
-}
-
-.button_to{
-  display: inline-block;
-  position: relative;
-  left: 600px;
-}
-</style>

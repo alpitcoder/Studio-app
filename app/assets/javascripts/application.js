@@ -5,3 +5,9 @@
 //= require moment
 //= require bootstrap-sprockets
 //= require bootstrap-datetimepicker
+
+
+$(function () {
+    $('#start_time').datetimepicker();
+    $('#end_time').datetimepicker();
+});
