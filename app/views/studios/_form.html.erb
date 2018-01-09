@@ -1,28 +1,75 @@
-<div class="row2">
-  <div class='col-sm-4'>
-    <div class="form-group">
+<div class="container-fluid" id="container-id">
+  <%= simple_form_for @studio do |f| %>
 
-      <%= simple_form_for @studio do |f| %>
-
-         <%= f.input :name %>
-       </br>
-         <%= f.input :location%>
-       </br>
-         <label for="opening_time">*Opening Time</label>
-         <%= f.time_select :opening_time ,{ampm: true}%>
-       </br>
-       <br>
-         <label for="closing_time">*Closing Time</label>
-         <%= f.time_select :closing_time,{ampm: true} %>
-       </br>
-       <br>
-         <%= f.input :studio_type %>
-       </br>
-         <%= f.input :price%>
-
-         <%= f.button :submit %>
-
-      <% end %>
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.input :name %>
+      </div>
     </div>
-  </div>
+    <br>
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.input :location %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class='col-sm-8'>
+        <label for="opening_time">
+          <abbr title="required">*</abbr>
+          Opening Time
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.time_select :opening_time ,{ampm: true}%>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class='col-sm-8'>
+        <label for="closing_time">
+          <abbr title="required">*</abbr>
+          Closing Time
+        </label>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.time_select :closing_time,{ampm: true} %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.input :studio_type %>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.input :price %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class='col-sm-8'>
+        <%= f.button :submit ,class: "btn btn-success" %>
+      </div>
+    </div>
+
+  <% end %>
 </div>
+
+
+<style>
+#container-id{
+  margin-left: 400px;
+}
+</style>

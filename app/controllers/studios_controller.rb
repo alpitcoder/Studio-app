@@ -10,9 +10,9 @@ class StudiosController < ApplicationController
   end
 
   def create
-    @studio=current_user.studios.build(studio_params)
-    @studio=@studio.save!
-    if @studio.valid?
+    @studio=Studio.new(studio_params)
+    @studio.user_id=current_user.id
+    if @studio.save
       flash[:notice] = "Successfully created studio!"
       redirect_to studio_path(@studio)
     else
