@@ -1,37 +1,26 @@
 
 <div class="container">
-  <div class="text-center">
+  <div class="row">
     <h3><%=@studio.name%><h3>
+  </div>
+  <div class="row">
     <p><%=@studio.studio_type%></p>
-    <h6><%=@studio.price%><h6>
+  </div>
+  <div class="row">
+    <h6> Rs. <%=@studio.price%><h6>
+  </div>
+  <div class="row">
     <p>Opens At: <%=@studio.opening_time.strftime("%I:%M %p")%></p>
+  </div>
+  <div class="row">
     <p>Closes At: <%=@studio.closing_time.strftime("%I:%M %p")%></p>
+  </div>
+  <div class="row">
+    <%= button_to "Book",new_studio_booking_path(@studio),class: "btn btn-success",method: :get%>
   </div>
 </div>
 
-<%= button_to "Book",new_studio_booking_path(@studio),method: :get%>
 
 <style>
-h2{
-  display: inline-block;
-  position: relative;
-  left: 200px;
-}
 
-.button_to{
-  display: inline-block;
-  position: relative;
-  left: 600px;
-}
-
-a.signup-class{
-  color: blue;
-  position: relative;
-  left: 500px;
-}
-a.signin-class{
-  color: blue;
-  position: relative;
-  left: 510px;
-}
 </style>
