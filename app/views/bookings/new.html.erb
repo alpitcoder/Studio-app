@@ -1,18 +1,32 @@
 
 
 <div class="container-fluid">
-  <div class="row2">
-    <div class='col-sm-10'>
-      <div class="form-group">
-        <%= form_tag(studio_bookings_path) do %>
-          <label for="start_time">*Start Time</label>
-          <%= text_field_tag :start_time%>
-          <label for="end_time">*End Time</label>
-          <%=text_field_tag :end_time%>
-          <%= submit_tag "Create Booking"%>
-        <%end%>
-        </div>
+  <%= form_tag(studio_bookings_path) do %>
+    <div class="row" id="start-id">
+      <div class='col-sm-6'>
+        <label for="start_time">*Start Time</label>
+        <%= text_field_tag :start_time%>
+      </div>
+      <div class='col-sm-6'>
+        <label for="end_time">*End Time</label>
+        <%=text_field_tag :end_time%>
+      </div>
+    <br>
+  </br>
+    <div class="row" id="booking-id">
+      <div class='col-sm-6'>
+        <%= submit_tag "Create Booking"%>
       </div>
     </div>
-  </div>
-<hr>
+  <%end%>
+</div>
+
+<style>
+#start-id{
+  margin-left: 50px;
+}
+#booking-id{
+  margin-top: 100px;
+  margin-left: 440px;
+}
+</style>

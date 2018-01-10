@@ -1,5 +1,5 @@
 
-<div class="container">
+<div class="container" id="container-id">
   <div class="row">
     <h3><%=@studio.name%><h3>
   </div>
@@ -7,7 +7,7 @@
     <p><%=@studio.studio_type%></p>
   </div>
   <div class="row">
-    <h6> Rs. <%=@studio.price%><h6>
+    <h6> Rs. <%=@studio.price%>/hour<h6>
   </div>
   <div class="row">
     <p>Opens At: <%=@studio.opening_time.strftime("%I:%M %p")%></p>
@@ -16,11 +16,17 @@
     <p>Closes At: <%=@studio.closing_time.strftime("%I:%M %p")%></p>
   </div>
   <div class="row">
-    <%= button_to "Book",new_studio_booking_path(@studio),class: "btn btn-success",method: :get%>
+    <%= button_to "Book",new_studio_booking_path(@studio),class: "btn btn-success",id: "button-id",method: :get%>
   </div>
 </div>
 
 
 <style>
+#container-id{
+  margin-left:500px;
+}
+#button-id{
+  margin-right: 1100px;
+}
 
 </style>

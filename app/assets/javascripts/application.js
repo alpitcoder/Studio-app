@@ -8,6 +8,14 @@
 
 
 $(function () {
-    $('#start_time').datetimepicker();
-    $('#end_time').datetimepicker();
+    $('#start_time').datetimepicker(
+      {
+        format: 'DD-MM-YYYY HH:mm:ss'
+      }
+    );
+    $('#end_time').datetimepicker(
+      {
+        format: 'DD-MM-YYYY HH:mm:ss'
+      }
+    );
 });
